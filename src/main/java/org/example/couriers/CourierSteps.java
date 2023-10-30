@@ -10,36 +10,37 @@ import static org.example.endpoints.API.*;
 
 public class CourierSteps {
 
-        public static RequestSpecification requestSpecification() { //есть сомнения
-                return given()
-                        .contentType(ContentType.JSON)
-                        .baseUri(BASE_URL);
-        }
-@Step("Регистрация нового курьера")
-public ValidatableResponse courierCreate(CreateCourier createCourier){
+    public static RequestSpecification requestSpecification() { //есть сомнения
+        return given()
+                .contentType(ContentType.JSON)
+                .baseUri(BASE_URL);
+    }
+
+    @Step("Регистрация нового курьера")
+    public ValidatableResponse courierCreate(CreateCourier createCourier) {
         return requestSpecification()
-        .body(createCourier)
-        .when()
-        .post(POST_CREATE_COURIER)
-        .then();
-        }
+                .body(createCourier)
+                .when()
+                .post(POST_CREATE_COURIER)
+                .then();
+    }
 
 
-        @Step("Логин курьера")
-public ValidatableResponse courierLogin(LoginCourier loginCourier){
+    @Step("Логин курьера")
+    public ValidatableResponse courierLogin(LoginCourier loginCourier) {
         return requestSpecification()
-        .body(loginCourier)
-        .when()
-        .post(LOGIN_COURIER)
-        .then();
-        }
+                .body(loginCourier)
+                .when()
+                .post(LOGIN_COURIER)
+                .then();
+    }
 
-@Step("Удаление курьера")
-public ValidatableResponse courierDeleted(int courierID){
+    @Step("Удаление курьера")
+    public ValidatableResponse courierDeleted(int courierID) {
         return requestSpecification()
-        .when()
-        .delete(DELETE_COURIER + courierID)
-        .then();
-        }
+                .when()
+                .delete(DELETE_COURIER + courierID)
+                .then();
+    }
 }
 

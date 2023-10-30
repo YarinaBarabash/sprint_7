@@ -39,9 +39,9 @@ public class CreateTest {
 
         createCourier.setLogin(loginRandom);
         ValidatableResponse validatableResponse = courierSteps.courierCreate(createCourier);
-        courierResult.courierCreateValid(validatableResponse);
         LoginCourier courierLogin = LoginCourier.from(createCourier);
         courierID = courierSteps.courierLogin(courierLogin).extract().jsonPath().getInt("id");
+        courierResult.courierCreateValid(validatableResponse);
     }
 
     @Test

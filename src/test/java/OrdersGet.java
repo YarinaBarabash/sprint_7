@@ -15,7 +15,7 @@ public class OrdersGet {
         @Description("Список заказов не должен быть пустой")
         public void orderList() {
             orderSteps = new OrderSteps();
-            ValidatableResponse validatableResponse = orderSteps.GetList();
+            ValidatableResponse validatableResponse = orderSteps.getList();
             validatableResponse.assertThat()
                     .statusCode(SC_OK)
                     .body("orders", notNullValue());

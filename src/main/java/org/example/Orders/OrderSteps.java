@@ -16,7 +16,7 @@ public class OrderSteps {
 
     }
     @Step("Создание заказа")
-    public ValidatableResponse CreateOrder(OrdersCreate createOrder) {
+    public ValidatableResponse createOrder(OrdersCreate createOrder) {
         return requestSpecification()
                 .body(createOrder)
                 .when()
@@ -25,7 +25,7 @@ public class OrderSteps {
     }
 
     @Step("Получение списка заказов")
-    public ValidatableResponse GetList() {
+    public ValidatableResponse getList() {
         return requestSpecification()
                 .when()
                 .get(ORDER_GET)

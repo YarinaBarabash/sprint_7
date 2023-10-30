@@ -23,7 +23,7 @@ public class LoginTest {
     }
 
     @Test
-    public void LoginCourier() {
+    public void loginCourier() {
         courierSteps.courierLogin(loginCourier);
         ValidatableResponse validatableResponse = courierSteps.courierLogin(loginCourier);
         courierResult.courierLoginValid(validatableResponse);
@@ -33,7 +33,7 @@ public class LoginTest {
     @DisplayName("Логин курьера без логина")
     @Description("Проверяем, что нельзя залогиниться без логина")
     @Test
-    public void LoginWithOutLogin() {
+    public void loginWithOutLogin() {
         loginCourier.setLogin(null);
         ValidatableResponse validatableResponse = courierSteps.courierLogin(loginCourier);
         courierResult.courierLoginError(validatableResponse);
@@ -42,7 +42,7 @@ public class LoginTest {
     @DisplayName("Логин курьера без пароля")
     @Description("Проверяем, что нельзя залогиниться без пароля")
     @Test
-    public void LoginWithOutPassword() {
+    public void loginWithOutPassword() {
         loginCourier.setPassword("");
         ValidatableResponse validatableResponse = courierSteps.courierLogin(loginCourier);
         courierResult.courierLoginError(validatableResponse);
@@ -51,7 +51,7 @@ public class LoginTest {
    @DisplayName("Логин по несуществующим кредам")
    @Description("вернет ошибку с несуществующими кредами")
            @Test
-public void NonExistentCredits() {
+public void nonExistentCredits() {
         loginCourier.setLogin("sjksjdk");
         loginCourier.setPassword("ддыы");
         ValidatableResponse validatableResponse = courierSteps.courierLogin(loginCourier);

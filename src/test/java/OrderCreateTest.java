@@ -44,7 +44,7 @@ public class OrderCreateTest {
     @Description("цвета самоката: черный и серый, черный, серый")
     public void orderCreateColorWithParam() {
         orderCreate = new OrdersCreate(color);
-        ValidatableResponse validatableResponse = orderSteps.CreateOrder(orderCreate);
-        orderResult.CreateOrder(validatableResponse);
+        ValidatableResponse validatableResponse = orderSteps.createOrder(orderCreate);
+        orderResult.createOrder(validatableResponse);
     }
 }

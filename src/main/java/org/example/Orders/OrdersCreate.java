@@ -3,6 +3,28 @@ package org.example.Orders;
 import java.util.List;
 
 public class OrdersCreate {
+    public String firstName;
+    public String lastName;
+    public String address;
+    public String metroStation;
+    public String phone;
+    public int rentTime;
+    public String deliveryDate;
+    public String comment;
+    public List<String> color;
+
+    public OrdersCreate(List<String> color) {
+        this.firstName = "1";
+        this.lastName = "2";
+        this.address = "Moscow, Omskaya";
+        this.metroStation = "4";
+        this.phone = "+7992191092109";
+        this.rentTime = 1;
+        this.deliveryDate = "2023-11-28";
+        this.comment = "Saske, come back to Konoha";
+        this.color = color;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -72,29 +94,6 @@ public class OrdersCreate {
     }
 
     public void setColor(List<String> color) {
-        this.color = color;
-    }
-
-
-    public String firstName;
-    public String lastName;
-    public String address;
-    public String metroStation;
-    public String phone;
-    public int rentTime;
-    public String deliveryDate;
-    public String comment;
-    public List<String> color;
-
-    public OrdersCreate(List<String> color) {
-        this.firstName = "1";
-        this.lastName = "2";
-        this.address = "Moscow, Omskaya";
-        this.metroStation = "4";
-        this.phone = "+7992191092109";
-        this.rentTime = 1;
-        this.deliveryDate = "2023-11-28";
-        this.comment = "Saske, come back to Konoha";
         this.color = color;
     }
 }

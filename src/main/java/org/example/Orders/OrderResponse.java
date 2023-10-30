@@ -8,7 +8,7 @@ import static org.hamcrest.Matchers.greaterThan;
 
 public class OrderResponse {
     @Step("Создание заказа")
-    public int CreateOrder(ValidatableResponse response) {
+    public int createOrder(ValidatableResponse response) {
       return   response.assertThat()
                 .statusCode(SC_CREATED)
                 .body("track",greaterThan(0))
